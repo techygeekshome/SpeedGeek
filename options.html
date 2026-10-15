@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpeedGeek options</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body class="page">
+<header>
+  <img src="icons/icon48.png" alt="">
+  <div><div class="brand">SpeedGeek</div><h1>Options</h1></div>
+</header>
+
+<div class="card" id="where">
+  <h2 id="whereTitle">Where SpeedGeek works</h2>
+  <p id="welcomeText" hidden>Thanks for adding SpeedGeek. Pick how you want it to work. You can change this at any time.</p>
+  <label class="choice" id="cAuto"><input type="radio" name="mode" value="auto"><span><b>On every site (recommended)</b>
+    <small>Your speed keys and the speed box are ready on every video, and remembered speeds are put back as soon as the page opens.
+    For this, SpeedGeek adds a small script to the pages you visit, so your browser will ask to let it "read and change data on all websites".
+    The script only looks for video and audio and listens for your speed keys. It reads nothing else and sends nothing anywhere.</small></span></label>
+  <label class="choice" id="cClick"><input type="radio" name="mode" value="click"><span><b>Only when I click the SpeedGeek icon</b>
+    <small>No access to any site until you click the icon on a tab. Then it works on that tab, keys included, until the page reloads or you go to another page.</small></span></label>
+  <div class="row"><span>Status:</span> <span class="pill" id="access"></span> <button class="small" id="grant" hidden>Allow on every site</button></div>
+</div>
+
+<div class="card">
+  <h2>Keyboard shortcuts</h2>
+  <p class="muted">These work on any page with a video or audio, as long as you are not typing in a box. Click a key to change it.</p>
+  <table id="keys">
+    <thead><tr><th>Action</th><th>Key</th><th></th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <div class="row"><span>Slower and faster change the speed by</span> <input type="number" id="step" min="0.05" max="4" step="0.05"></div>
+  <div class="row"><span>Back and forward jump</span> <input type="number" id="seek" min="1" max="600" step="1"> <span>seconds</span></div>
+  <div class="row"><span>Preferred speed</span> <input type="number" id="preferred" min="0.1" max="16" step="0.05"> <span class="muted">(press the key again to go back to 1&times;)</span></div>
+</div>
+
+<div class="card">
+  <h2>Behaviour</h2>
+  <div class="row"><label><input type="checkbox" id="remember"> Remember my speed for each site</label></div>
+  <div class="row"><label><input type="checkbox" id="force"> Keep my speed when the site tries to change it back</label></div>
+  <div class="row"><label><input type="checkbox" id="overlay"> Show the speed box on videos</label></div>
+  <p class="muted">The speed box fades out on its own. Drag it to move it, or press the hide key to hide it on that page.</p>
+</div>
+
+<div class="card">
+  <h2>Remembered speeds</h2>
+  <table id="sites"><tbody></tbody></table>
+  <p class="muted" id="noSites">No sites yet. Change the speed on a site and SpeedGeek remembers it there.</p>
+</div>
+
+<div class="card">
+  <h2>Never run on these sites</h2>
+  <p class="muted">One site per line, for example <code>example.com</code>. Subdomains are covered too.</p>
+  <textarea id="excluded" spellcheck="false"></textarea>
+  <div class="row"><button class="small" id="saveEx">Save list</button> <span class="saved" id="savedEx">Saved</span></div>
+</div>
+
+<p class="muted">SpeedGeek is free and open source from <a href="https://techygeekshome.info/browser-extensions/speedgeek/" target="_blank">TechyGeeksHome</a>. No account, no tracking, nothing sent anywhere.</p>
+<script src="defaults.js"></script>
+<script src="options.js"></script>
+</body>
+</html>

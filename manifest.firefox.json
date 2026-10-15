@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "SpeedGeek: Video Speed Controller",
+  "short_name": "SpeedGeek",
+  "version": "1.0.0",
+  "description": "Speed up or slow down any video or audio, 0.1x to 16x, with keys or a click. Remembers your speed per site. Free and open source.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": [
+      "defaults.js",
+      "background.js"
+    ]
+  },
+  "action": {
+    "default_title": "SpeedGeek: video speed",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "homepage_url": "https://techygeekshome.info/browser-extensions/speedgeek/",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "speedgeek@techygeekshome.info",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  }
+}

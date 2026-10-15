@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>SpeedGeek</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body class="popup">
+<header>
+  <img src="icons/icon32.png" alt="">
+  <div>
+    <div class="brand">SpeedGeek</div>
+    <div class="host" id="host">This tab</div>
+  </div>
+</header>
+
+<div class="speed">
+  <button class="round" id="minus" title="Slower" aria-label="Slower">&minus;</button>
+  <div class="big" id="speed">1.0&times;</div>
+  <button class="round" id="plus" title="Faster" aria-label="Faster">+</button>
+</div>
+<div class="sec">
+  <input type="range" id="slider" min="0" max="1000" step="1" aria-label="Speed">
+  <div class="scale"><span>0.1&times;</span><span>1&times;</span><span>4&times;</span><span>16&times;</span></div>
+  <div class="chips" id="quick"></div>
+</div>
+
+<div class="status muted" id="status">Looking for video and audio...</div>
+
+<div class="box" id="accessBox" hidden>
+  <div id="accessText">SpeedGeek is working on this tab because you clicked its icon. To have it ready on every site, allow it in the options.</div>
+  <button class="small" id="allow">Use on every site</button>
+</div>
+
+<div class="foot">
+  <label><input type="checkbox" id="offHere"> Turn off on this site</label>
+  <a href="options.html" target="_blank" id="opts">Options</a>
+</div>
+<div class="keys" id="keys"></div>
+<script src="defaults.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
